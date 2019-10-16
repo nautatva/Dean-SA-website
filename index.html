@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Dean of Student Affairs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./static/bootstrap.css">
+  <script src="./static/jquery.js"></script>
+  <script src="./static/bootstrap.js"></script>
+
+  <!-- FontAwesome -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+  <!-- Favicon -->
+
+  <link rel="icon" type="image/png" sizes="192x192" href="./static/iitb.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="./static/iitb.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="./static/iitb.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="./static/iitb.png">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="./static/nav-bar.css"> -->
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <style>
+    .navbar {
+      border-radius: 0;
+    }
+
+    .intro {
+      margin: 25px auto;
+    }
+
+
+    .absolute {
+      position: absolute;
+    }
+
+    input,
+    textarea {
+      font-family: "Homemade Apple";
+      background: transparent;
+      border: none;
+    }
+
+    input {
+      margin-left: 10px;
+      width: 240px;
+      font-size: 0.8em;
+      letter-spacing: 2px;
+      padding: 5px;
+    }
+
+    .postcard {
+      position: relative;
+      width: 740px;
+      height: 498px;
+      margin: 0 auto;
+      background: url('https://developer.mozilla.org/files/4151/background.jpg');
+      /*img from: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms */
+      font-family: "MedievalSharp";
+      border: 2px solid #ccc;
+      box-shadow: 7px 7px 20px #555;
+      margin-top: 5rem;
+    }
+
+    .receiver {
+      right: 40px;
+      top: 185px;
+    }
+
+    .sender {
+      right: 40px;
+      top: 235px;
+    }
+
+    .reply {
+      right: 40px;
+      top: 290px;
+    }
+
+    .message {
+      left: 25px;
+      top: 100px;
+    }
+
+    .message textarea {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 0.7em;
+      background: transparent;
+      letter-spacing: 3px;
+      line-height: 1.5em;
+    }
+
+    .send-btn {
+      right: 130px;
+      top: 360px;
+    }
+
+    button {
+      font: 0.6em sans-serif;
+      font-weight: bold;
+      padding: 10px;
+      background: transparent;
+      border: 2px solid black;
+      border-radius: 5px;
+      transform: rotate(-1.5deg);
+    }
+
+    .send-btn:hover {
+      background: #ccc;
+      top: 362px;
+    }
+
+    textarea:focus,
+    input:focus,
+    button:focus {
+      outline-color: #ccc;
+    }
+
+    .carousel-inner .item img {
+      height: 500px;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-inverse container-fluid">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-left"><img
+            style="width:45px;height:45px; padding: 5px 0px 2px 2px; margin-left: 12px; object-fit: contain; "
+            src="./static/iitb.png"></a>
+        <span class="icon-bar"></span><a class="navbar-brand" href="#"
+          style="padding-left: 20px; margin-right: -26px;">Dean of Student Affairs,
+          IIT Bombay</a>
+      </div>
+      <div class="navbar-right" style="padding-right: 45px;">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Code of Conduct<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://gymkhana.iitb.ac.in/students/docs/campusCodeOfConduct.pdf">Campus behavior</a></li>
+                <li><a href="https://gymkhana.iitb.ac.in/students/docs/DACRules.pdf">DAC</a></li>
+                <li><a href="https://gymkhana.iitb.ac.in/students/rulebook.pdf">Academic Rules</a></li>
+              </ul>
+            </li>
+            <li class=""><a href="https://gymkhana.iitb.ac.in/">The Student Gymkhana</a></li>
+            <!-- <li class=""><a href="#section3">Student support</a></li> -->
+            <li class=""><a href="#section41">Student Councils</a></li>
+            <li><a href="#section42">Contact</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <!--        <li><a href="#section41">Section 4-1</a></li>
+                              <li><a href="#section42">Section 4-2</a></li> -->
+                <li><a href="./contact">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="./images/101.jpg" alt="Chania">
+        <div class="carousel-caption">
+          <!-- <h3>Los Angeles</h3> -->
+          <!-- <p>LA is always so much fun!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/102.jpg" alt="Chicago">
+        <div class="carousel-caption">
+          <!-- <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/103.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/104.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/105.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/106.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/107.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./images/108.jpg" alt="New York">
+        <div class="carousel-caption">
+          <!-- <h3>New York</h3>
+          <p>We love the Big Apple!</p> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="intro container">
+    <h1>Introduction</h1>
+    <p>The IIT Bombay campus provides an ideal setting for students to participate in recreational and extracurricular
+      activities. IITB's a core program involving co-curricular activities for UG students in their first year is meant
+      to provide them a launching pad for these activities. The mandate of the Student Affairs Office is to coordinate
+      and regulate all aspects of student life at IITB. This is carried out primarily through two bodies:
+      <ul>
+        <li>
+          The Hostels Coordinating Unit ( HCU )
+        </li>
+        <li> The Students Gymkhana, which has a group of highly qualified sports officers and other instructors to run
+          all
+          the activities. The Gymkhana also forms the hub for the cultural activities of the students.
+        </li>
+      </ul>
+    </p>
+  </div>
+
+
+
+  <div class="postcard">
+    <!-- <form class="postcard" action=""> -->
+    <div class="receiver absolute">
+      <label for="r-name">To: </label>
+      <input type="text" name="receiver-name" placeholder="The students">
+    </div>
+    <div class="sender absolute">
+      <label for="s-name">From: </label>
+      <input type="text" name="sender-name" placeholder="DoSA">
+    </div>
+    <div class="reply absolute">
+      <label for="t-reply">Reply: </label>
+      <input type="text" name="reply-text" placeholder="dosa ka email">
+    </div>
+    <div class="message absolute">
+      <label for="t-message">Message from the Dean</label>
+      <br>
+      <!-- set the placeholder as default text for area to be scrollable -->
+      <textarea disabled name="message" rows="12" cols="35" placeholder="Dear Students,
+
+        Welcome to IIT Bombay! I am sure you are excited. You must be looking forward to reaching here and start your
+        wonderful and exciting journey.
+        
+        You have indeed chosen one of the finest academic institutes in this country with a heritage to be proud of. It
+        is
+        my pleasure to assure you that you are about to embark on a special voyage that will present you with some of
+        the
+        best moments you ever lived through. You will cherish this for the rest of your life.
+        
+        The Campus is located in Powai, one of the northern suburbs of Mumbai, the residents of the institute reap the
+        advantage of being in the busy financial capital of India, while at the same time enjoying the serenity of a
+        campus known for its natural beauty. A fully residential institute, all its students are accommodated in its 17
+        hostels with in-house dining; the campus also provides excellent amenities for sports and other recreational
+        facilities. Efforts are continually made to enhance the quality of student life that you are going to be part of
+        very soon.
+        
+        I sincerely hope that along with your studies, you will actively participate in one or more activities of your
+        choice which keep happening over the year. As you know, the goal is to be a well-developed personality and a
+        responsible citizen as you graduate as an IITian. Your stay in a Hostel will make you a member of the Hostel.
+        You
+        will cherish it the most in later years when you meet a fellow IITian from your Hostel.
+        
+        I would also like to request you to take note of the rules and regulations that exist for all of us here at IIT
+        Bombay. You know, rules & regulations are made to bring about discipline in the way one leads one's life. They
+        are
+        not made to curtail your freedom and bound you, but they are put in place to guide you in the path that will
+        take
+        you to the goal we have already mentioned.
+        
+        Many of you will be stepping out of your home to stay and take care of yourself without the loving & caring
+        parental assistance for the first time. You will enjoy the fresh air of freedom but some may find it difficult
+        to
+        cope up with. In such a situation, please do not feel embarrassed, do not hesitate, but contact us. Certainly
+        together we shall be able to overcome whatever difficulty you may have.
+        
+        Looking forward to meeting you soon.
+        
+        With best wishes,
+        Prof. Tapanenedu Kundu        
+        Dean of Student's Affairs
+        IIT Bombay
+"></textarea>
+    </div>
+    <!-- <div class="send-btn absolute">
+        <button type="submit" name="button">Send your message >>></button>
+      </div> -->
+    <!-- </form> -->
+  </div>
+
+
+  <!-- <div class="message container">
+    <h1>Message from the dean</h1>
+    <p>
+      Dear Students,
+      <br><br>
+      Welcome to IIT Bombay! I am sure you are excited. You must be looking forward to reaching here and start your
+      wonderful and exciting journey.
+      <br><br>
+      You have indeed chosen one of the finest academic institutes in this country with a heritage to be proud of. It
+      is
+      my pleasure to assure you that you are about to embark on a special voyage that will present you with some of
+      the
+      best moments you ever lived through. You will cherish this for the rest of your life.
+      <br><br>
+      The Campus is located in Powai, one of the northern suburbs of Mumbai, the residents of the institute reap the
+      advantage of being in the busy financial capital of India, while at the same time enjoying the serenity of a
+      campus known for its natural beauty. A fully residential institute, all its students are accommodated in its 17
+      hostels with in-house dining; the campus also provides excellent amenities for sports and other recreational
+      facilities. Efforts are continually made to enhance the quality of student life that you are going to be part of
+      very soon.
+      <br><br>
+      I sincerely hope that along with your studies, you will actively participate in one or more activities of your
+      choice which keep happening over the year. As you know, the goal is to be a well-developed personality and a
+      responsible citizen as you graduate as an IITian. Your stay in a Hostel will make you a member of the Hostel.
+      You
+      will cherish it the most in later years when you meet a fellow IITian from your Hostel.
+      <br><br>
+      I would also like to request you to take note of the rules and regulations that exist for all of us here at IIT
+      Bombay. You know, rules & regulations are made to bring about discipline in the way one leads one's life. They
+      are
+      not made to curtail your freedom and bound you, but they are put in place to guide you in the path that will
+      take
+      you to the goal we have already mentioned.
+      <br><br>
+      Many of you will be stepping out of your home to stay and take care of yourself without the loving & caring
+      parental assistance for the first time. You will enjoy the fresh air of freedom but some may find it difficult
+      to
+      cope up with. In such a situation, please do not feel embarrassed, do not hesitate, but contact us. Certainly
+      together we shall be able to overcome whatever difficulty you may have.
+      <br>
+      Looking forward to meeting you soon.
+      <br><br>
+      With best wishes,
+      <br>
+      Prof. Tapanenedu Kundu
+      <br>
+      Dean of Student's Affairs
+      <br>
+      IIT Bombay
+
+    </p>
+  </div> -->
+
+  <!-- Message from the dean -->
+
+  <!-- Message from GSHA -->
+
+
+
+  <!-- 
+
+  <button id="myBtn" class="scroll scrolltop" title="Go to top" style="display: none;">^</button>
+  <script src="./static/move-to-top.js"></script> -->
+
+  <!-- Design a footer -->
+
+
+</body>
+
+</html>
